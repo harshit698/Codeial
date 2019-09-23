@@ -9,6 +9,16 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-startegy');
 const MongoStore = require('connect-mongo')(session);
+const sassMiddleware=require('node-sass-middleware');
+
+app.use(sassMiddleware({
+    src:'./assets/scss',
+    dest:'./assets/css',
+    debug:true,
+    outputStyle:'extended',
+    prefix:'/css'
+}));
+
 app.use(express.urlencoded());
 
 app.use(cookieParser());
@@ -49,7 +59,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
-// use express router
+/e NoSQL equivalent of associations found in relational databases. While serving a similar purpose and appearing similar in implementation, they do behave differently.
+NoSQL relations vs RDBMS associations/ use express router
 app.use('/', require('./routes'));
 
 
