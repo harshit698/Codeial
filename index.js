@@ -59,8 +59,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
-/e NoSQL equivalent of associations found in relational databases. While serving a similar purpose and appearing similar in implementation, they do behave differently.
-NoSQL relations vs RDBMS associations/ use express router
 app.use('/', require('./routes'));
 
 
