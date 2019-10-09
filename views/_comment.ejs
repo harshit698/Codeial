@@ -2,12 +2,12 @@
         <p>
             <% if (locals.user && locals.user.id == comment.user.id){ %>
             <small>
-                <a href="/comments/destroy/<%= comment.id %>">X</a>
+                <a href="/comments/destroy/<%= comment.id %>">Delete</a>
             </small>
             <% } %>
             <%= comment.content %>
             <br>
-            <small>
+            <small style="color:red">
                 <%= comment.user.name %>
             </small>
         </p>    
